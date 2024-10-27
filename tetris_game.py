@@ -36,6 +36,7 @@ current_shape = random.choice(SHAPES)
 current_x = SCREEN_WIDTH // BLOCK_SIZE // 2 - len(current_shape[0]) // 2
 current_y = 0
 game_over = False
+score = 0
 
 # Create the screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -75,10 +76,18 @@ def merge_shape(shape, offset_x, offset_y):
                 grid[y + offset_y][x + offset_x] = 1
 
 def clear_lines():
-    global grid
+    global grid, score
     new_grid = [row for row in grid if any(cell == 0 for cell in row)]
     lines_cleared = len(grid) - len(new_grid)
+    score += lines_cleared
     grid = [[0 for _ in range(SCREEN_WIDTH // BLOCK_SIZE)] for _ in range(lines_cleared)] + new_grid
+
+def display_result():
+    font = pygame.font.Font(None, 36)
+    text = font.render(f"Game Over! Score: {score}", True, WHITE)
+    screen.blit(text, (SCREEN_WIDTH // 2 - text.get_width() // 2, SCREEN_HEIGHT // 2 - text.get_height() // 2))
+    pygame.display.flip()
+    pygame.time.wait(3000)
 
 # Main game loop
 while not game_over:
@@ -117,4 +126,5 @@ while not game_over:
     pygame.display.flip()
     clock.tick(10)
 
+display_result()
 pygame.quit()

@@ -23,3 +23,11 @@ jobs:
     - name: Run Tetris game
       run: |
         python tetris_game.py
+
+    - name: Run tests
+      run: |
+        python -m unittest discover -s tests
+
+    - name: Display test results
+      run: |
+        cat test-results.txt
