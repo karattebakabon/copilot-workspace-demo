@@ -28,3 +28,21 @@ A Tetris game has been implemented using Python. You can play the game by runnin
    ```
 
 Enjoy playing Tetris!
+
+## Tumblr Crawler
+
+A Tumblr Crawler script has been implemented using Python. You can download all images and videos posted by a specific Tumblr ID by running the `tumblr_crawler.py` file.
+
+### How to Use the Tumblr Crawler
+
+1. Make sure you have Python installed on your system.
+2. Install the required dependencies:
+   ```
+   pip install requests
+   ```
+3. Run the `tumblr_crawler.py` file and enter the Tumblr ID when prompted:
+   ```
+   python tumblr_crawler.py
+   ```
+
+The script will create a folder with the Tumblr ID name and download all images and videos into that folder. If the folder already exists, it will reuse the folder and skip downloading files that already exist.
