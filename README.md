@@ -46,3 +46,21 @@ A Tumblr Crawler script has been implemented using Python. You can download all 
    ```
 
 The script will create a folder with the Tumblr ID name and download all images and videos into that folder. If the folder already exists, it will reuse the folder and skip downloading files that already exist.
+
+## Tumblr Crawler 2
+
+A new Tumblr Crawler script has been implemented using Python. You can download all images and videos posted by a specific Tumblr ID from both URL formats by running the `tumblr_crawler_2.py` file.
+
+### How to Use the Tumblr Crawler 2
+
+1. Make sure you have Python installed on your system.
+2. Install the required dependencies:
+   ```
+   pip install requests
+   ```
+3. Run the `tumblr_crawler_2.py` file and enter the Tumblr ID when prompted:
+   ```
+   python tumblr_crawler_2.py
+   ```
+
+The script will create a folder with the Tumblr ID name and download all images and videos into that folder. If the folder already exists, it will reuse the folder and skip downloading files that already exist. The script supports both URL formats `https://{tumblr_id}.tumblr.com` and `http://www.tumblr.com/{tumblr_id}`.
